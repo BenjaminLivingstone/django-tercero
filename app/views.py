@@ -4,8 +4,7 @@ from django.utils.crypto import get_random_string
 
 def random_word(request):
     if 'count' in request.session:
-        temp=request.session['count']+1
-        request.session['count']=temp
+        request.session['count']=request.session['count']+1
     else:
         request.session['count']=1
     context = {
